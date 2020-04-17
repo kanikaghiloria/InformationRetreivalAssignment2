@@ -40,8 +40,8 @@ public class IndexAnkita {
     private final static String absPathToLATimes = String.format("../documents/latimes",currentRelativePath);
     
     static Analyzer analyzer = new CustomAnalyzer();
-//    static Similarity similarity = new BM25Similarity();
-    static Similarity similarity = new LMDirichletSimilarity();
+    static Similarity similarity = new BM25Similarity();
+//    static Similarity similarity = new LMDirichletSimilarity();
 
     
     public static void main(String[] args) throws IOException {

@@ -48,8 +48,8 @@ public class Queries {
         // Create objects to read and search across the index
         DirectoryReader directoryReader = DirectoryReader.open(directory);
         IndexSearcher indexSearcher = new IndexSearcher(directoryReader);
-//        indexSearcher.setSimilarity(new BM25Similarity());
-        indexSearcher.setSimilarity(new LMDirichletSimilarity());
+        indexSearcher.setSimilarity(new BM25Similarity());
+//        indexSearcher.setSimilarity(new LMDirichletSimilarity());
 
         // Open the topic file and split
         String file = "topics";
@@ -133,9 +133,9 @@ public class Queries {
 
         QueryParser parser = new MultiFieldQueryParser(new String[] {LuceneConstants.HEADLINE,
                 LuceneConstants.TEXT, LuceneConstants.BYLINE, LuceneConstants.HEADING, LuceneConstants.HEADER,
-                LuceneConstants.AGENCY, LuceneConstants.SUMMARY,
-                LuceneConstants.TITLE, LuceneConstants.DATE_LINE}, analyzer);
-//        LuceneConstants.FOOTNOTE,  LuceneConstants.US_BUREAU, LuceneConstants.US_DEPARTMRNT,
+                LuceneConstants.AGENCY, LuceneConstants.SUMMARY,LuceneConstants.FOOTNOTE,  LuceneConstants.US_BUREAU,
+                LuceneConstants.US_DEPARTMRNT, LuceneConstants.TITLE, LuceneConstants.DATE_LINE}, analyzer);
+//
         String queryString = "";
         List<String> resultsList = new ArrayList<>();
 
